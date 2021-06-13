@@ -1,0 +1,74 @@
+<div class="nb_main">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="navbar-brand" class="nava" style="font-size: 30px;">Books Portal</div>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+    </ul>
+    <ul class="navbar-nav">
+        <a class="nav-link" class="nava rigt" routerLink="/special/upload" routerLinkActive="active">Upload</a>
+        <a class="nav-link" class="nava rigt" *ngIf="!_authService.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
+        <a class="nav-link" class="nava rigt" *ngIf="!_authService.loggedIn()" routerLink="/register" routerLinkActive="active">Register</a>
+        <a class="nav-link" class="nava rigt" style="cursor:pointer" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">Logout</a>        
+    </ul>
+  </div>
+</nav>  
+
+</div>
+
+<div class="search_bar">
+  <form #search_book="ngForm" (ngSubmit)="searchbooks(search_book.value)" novalidate>
+    <div class="parallel" style="margin-left: 20px;">
+      <label class="searchoption">Branch</label>
+      <div class="blockview"><input type="radio" ngModel name="branch" value="CSE" ><label>CSE</label></div>
+      <div class="blockview"><input type="radio" ngModel name="branch" value="IT" ><label>IT</label></div>
+      <div class="blockview"><input type="radio" ngModel name="branch" value="ME" ><label>ME</label></div>
+      <div class="blockview"><input type="radio" ngModel name="branch" value="EE" ><label>EE</label></div>   
+    </div>
+
+    <div class="parallel">
+      <label class="searchoption">Subject</label>
+      <div class="blockview"><input type="radio" ngModel name="subject" value="DBMS" ><label>DBMS</label></div>
+      <div class="blockview"><input type="radio" ngModel name="subject" value="WT" ><label>WT</label></div>
+      <div class="blockview"><input type="radio" ngModel name="subject" value="OS" ><label>OS</label></div>
+      <div class="blockview"><input type="radio" ngModel name="subject" value="DSA" ><label>DSA</label></div>
+    </div>
+
+    <div class="parallel">
+      <label class="searchoption">Price</label>
+      <div class="blockview"><input type="radio" ngModel name="price" value="1" ><label>Less than 500</label></div>
+      <div class="blockview"><input type="radio" ngModel name="price" value="2" ><label>500-1000</label></div>
+      <div class="blockview"><input type="radio" ngModel name="price" value="3" ><label>Greater than 1000</label></div>      
+    </div>
+
+    <div class="parallel" style="padding-top: 50px;">
+      <button type="submit" class="searchbutton click_ani" id="register">Search Book</button>        
+    </div>
+  </form>
+</div>
+<hr>
+<div class="results">
+  <div class="result" *ngFor="let event of events">
+
+    <div class="imagenprice">
+      <div class="image_holder"><img src="{{event.photo}}" alt=" No Preview" width="100%;" height="100%;"></div>        
+
+      <p class="price">Rs.&nbsp;{{event.price}}</p>
+    </div>
+
+    <div class="otherinfo">
+      <h5 class="bookname">{{event.book_name}}</h5>
+      <p class="auth1">Author&nbsp;:&nbsp;{{event.author1}}</p>
+      <div class="auth2" *ngIf="event.author2!=''">Other Author&nbsp;:&nbsp;{{event.author2}}</div>
+      <p class="edition">Edition&nbsp;:&nbsp;{{event.edition}}</p>
+      <p class="nameofuploader">Uploaded&nbsp;By&nbsp;:&nbsp;{{event.name}}</p> 
+    </div>
+    <div class="buybutton_body">
+      <button type="button" class="buybutton"><a class="tologin" routerLink="/special" routerLinkActive="active">Buy</a></button>
+    </div> 
+  </div>
+  <div class="noresultfound" *ngIf="!events.length && searchhappened">No Data Found !!</div>
+</div>

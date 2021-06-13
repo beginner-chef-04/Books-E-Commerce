@@ -1,0 +1,70 @@
+
+<div class="header">Sign<span> Up</span></div>
+<div class="footer">Already Registered. <a class="nav-link" routerLink="/login" routerLinkActive="active"> Log In</a></div>
+
+<div class="containerr">
+
+  <form  name="form2" id="form" #registerform="ngForm" (ngSubmit)="registerUser(registerform.value)" novalidate>
+      <div class="name">
+          <fa name="fas fa-user" class="icon" ></fa>
+
+
+          <div  id="ne1" [ngClass]="{'form_error': name_error!=null}"  style="display: inline;" >
+          <input  pattern="^[a-zA-Z0-9]{2,10}" type="text" autocomplete="off" placeholder=" Name" ngModel name="username" id="n"  #uname="ngModel" autofocus required>
+          </div>
+
+          <fa name="fas fa-times" class="icon color_red" id="i1" *ngIf="uname.errors?.pattern"></fa>
+          <fa name="fas fa-exclamation-circle" class="icon color_red" *ngIf="uname.errors?.required && (uname.touched || uname.dirty)"></fa>
+          <button type="button" id="user_info" (click)="name_rules()">i</button>
+
+
+          <div id="ne2" [ngClass]="{'form_error': name_error!=null}" >
+            <span *ngIf="name_error!=null">{{name_error}}</span>
+          </div>
+
+      </div>
+      <div class="email">
+          <fa name="fas fa-envelope" class="icon"></fa>
+          <input type="text" autocomplete="off" pattern="([a-zA-Z0-9]+)@(([a-zA-Z]+\.com)|([a-zA-Z]+\.edu\.in))" placeholder=" Email" ngModel name="email" id="e" #emailid="ngModel" required>
+          <fa name="fas fa-times" class="icon color_red" id="i2" *ngIf="emailid.errors?.pattern"></fa>
+          <fa name="fas fa-exclamation-circle" class="icon color_red" *ngIf="emailid.errors?.required && (emailid.touched || emailid.dirty)"></fa>
+          <button type="button" id="user_info" (click)="email_rules()">i</button>                
+      </div>
+      <div class="password">
+          <fa name="fas fa-lock" class="icon" ></fa>
+          <input type="password" autocomplete="off" pattern="^([a-zA-Z]+)((\W{1})|(_{1}))(\d{1})" placeholder=" Password" ngModel name="password"  id="p" #pass="ngModel" required>
+          <fa name="fas fa-times" class="icon color_red" id="i3" *ngIf="pass.errors?.pattern" ></fa>
+          <fa name="fas fa-exclamation-circle" class="icon color_red" *ngIf="pass.errors?.required && (pass.touched || pass.dirty)"></fa>
+          <button type="button" id="user_info" (click)="password_rules()">i</button>                
+      </div>
+      <div class="repeat">
+          <fa name="fas fa-lock" class="icon" ></fa>
+          <input type="password" autocomplete="off" pattern="{{registerform.value.password}}" placeholder=" Confirm Password" ngModel name="cfm_password"  id="c" #pass_check="ngModel" required>
+          <fa name="fas fa-times" class="icon  color_red" id="i4" *ngIf="pass_check.errors?.pattern"></fa>
+          <fa name="fas fa-exclamation-circle" class="icon color_red" *ngIf="pass_check.errors?.required && (pass_check.touched || pass_check.dirty)"></fa>
+      </div>
+
+      <div class="address">
+          <fa name="fas fa-address-card" class="icon"></fa>
+<textarea rows='2' coloumns='40' autocomplete="off" placeholder=" Address" ngModel  name="address" id="a"  #addrs="ngModel" required></textarea>              
+<fa name="fas fa-exclamation-circle" class="icon color_red" *ngIf="addrs.errors?.required && (addrs.touched || addrs.dirty)"></fa>
+        </div>
+
+
+      <div class="register">
+          <button [disabled]="!registerform.form.valid" type="submit" class="click_ani" id="register" >Register</button>
+      </div>
+  </form>
+</div>
+
+
+
+
+       <!--    <input type="text" [(ngModel)]="registerUserData.email" name="email" class="form-control rounded-0" required>
+
+          <input type="password" [(ngModel)]="registerUserData.password" name="password" class="form-control rounded-0"  required>
+             
+                <button type="button" (click)="registerUser()" class="btn btn-primary float-right">Register</button>
+-->
+  
+  

@@ -1,0 +1,176 @@
+/*for testing purpose*//*div,p,h5{
+    border: 1px solid black;
+}*/
+*{
+    font-family: 'Poppins','sans-serif';
+}
+.nava{
+    color: white;
+    margin-right: 20px;
+}
+.bookportal{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
+
+.bookportal:hover{
+    color: grey;
+}
+.nava:hover{
+    color: grey;
+    text-decoration: none;
+    cursor:pointer;
+}
+.navbar{
+    height: 60px;
+    font-size: 20px;
+}
+.nb_main{
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,90);
+    position: fixed;top: 0;
+    z-index: 1;
+}
+.rigt{
+    padding-top: 12px;
+}
+
+.profile_ph{
+    /*border: 2px solid black;*/
+    width: 250px;
+    height: 250px;
+    background-image: url('../profile.jpg');
+    background-size: cover;
+    border-radius: 130px ;
+    box-shadow: 0 0 3px rgba(0,0,0,90);
+    margin-left: 100px;
+    margin-top: 70px;
+    
+}
+.parent_profile_ph{
+    float: left;
+    width: 410px;
+    height: 450px;
+    padding-right: 30px;
+    margin-top: 110px;
+    padding-top: 20px;
+    border-right: 1px solid #222020;
+}
+.parent_info{
+    float: left;
+    width: 910px;
+    height: 450px;
+    padding-left: 30px;
+    margin-top: 110px;
+    padding-top: 20px;
+  /*  border: 1px solid #222020;*/
+}
+.info{
+    font-family: 'Poppins','sans-serif';
+    list-style-type: none;
+   /* border: 1px solid #222020;*/
+
+}
+.info li{
+    border-bottom: 1px solid #222020;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 5px;
+  /*  border: 1px solid #222020;*/
+}
+.info li:hover
+{
+  /*  border: 1px solid #222020;*/
+    transform: scale(1.02);
+}
+.bottom_info{
+    width: 80%;
+    box-sizing: border-box;
+    margin-left: 5%;
+    /*margin-right: 10%;*/
+    margin-top: 35px;
+    float: left;
+}
+.results1,.results2,.results3{
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 2px solid black;
+    font-size: xx-large;
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+.noresultfound{
+    color: grey;
+    width: 100%;
+    font-size: larger;
+    font-weight: 600;
+    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+.result{
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 2px solid  black;
+    padding: 10px;
+    overflow: auto;
+    margin-bottom: 28px;
+}
+.result:hover{
+    transform: scale(1.02);
+}
+
+.bookname{
+    margin-top: 5px;
+    margin-bottom: 25px;
+    color: black;
+    font-size: x-large;
+    font-weight: bold;
+
+}
+.price{
+    margin-top: 0px;
+    margin-bottom: 6px;
+    color: green;
+    font-size: medium;
+
+}
+.auth1{
+    margin-top: 0px;
+    margin-bottom: 6px;
+    color: grey;
+    font-size: medium;
+
+}
+.auth2{
+    margin-top: 0px;
+    margin-bottom: 6px;
+    color: grey;
+    font-size: medium;
+
+}
+.edition{
+    margin-top: 0px;
+    margin-bottom: 6px;
+    color: grey;
+    font-size: medium;
+
+}
+.nameofuploader{
+    margin-top: 0px;
+    margin-bottom: 6px;
+    color: grey;
+    font-size: medium;
+}
+.otherinfo{
+    width: 60%;
+    display: block;
+    margin-left: 4%;
+    box-sizing: border-box;
+    float: left;
+}

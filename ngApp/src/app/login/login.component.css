@@ -1,0 +1,176 @@
+
+.msgg span
+{
+          font-family: 'Poppins','Sans-serif';
+          color: red;
+          font-size: 18px;
+          font-weight: bold;
+}
+.msgg{
+    text-align: center;
+    padding-top: 15px;
+}
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: none;
+    font-family: 'Poppins','Sans-serif';
+}
+.containerr
+{
+    background: url('./login-bg.jpg');
+    opacity: 0.8;
+    width: 100%;
+    height: 650px;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+
+
+}
+.form_body
+{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+
+}
+.user,.pass,.sbt
+{
+    padding: 8px;
+    position: relative;
+}
+.alert{
+    position: relative;
+}
+#form
+{
+    position: relative;
+}
+input
+{
+    background: none;
+    outline: none;
+    color: tomato;
+    font-size: 20px;   
+    width: 200px;
+    border: none;
+}
+.icon
+{
+    margin-right: 8px; 
+    padding-right: 7px;
+    border-right: 2px solid black; 
+    display: inline-block;
+}
+
+.ico{
+    padding-right: 10px;
+    font-size: 23px;
+}
+button
+{
+        margin-top: 10px;
+        background: none;
+        outline: none;
+        border: none;
+        background-color: tomato;
+        border-radius: 20px;
+        width: 70px;
+        height: 30px;
+}
+.user:hover,.pass:hover,.sbt button:hover
+{
+    transform: scale(1.05);
+}
+.user,.pass
+{
+    border-bottom: 2.3px solid tomato;
+}
+.header
+{
+    color: white;
+    font-size: 3.4rem;
+    font-weight: 500;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%,0%);
+    text-shadow: 2px 2px grey;    
+}
+.footer
+{
+    top: 90%;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%,0%);
+    color: white;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px grey;    
+}
+.footer a 
+{
+    display: inline;
+    text-decoration: none;
+    color: tomato;
+    padding:5px;
+}
+@media (max-width:1000px)
+{
+    .header
+    {
+        margin-left: 40vw;
+    }
+    .footer
+    {
+        left:20%;
+    }
+}
+.fa-times
+{
+    color: red;
+}
+.fa-check
+{
+    color:green;
+}
+.sbt
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.header span
+{
+    color: tomato;
+}
+.form_body
+{
+    position: absolute;
+    width: 430px;
+    height: 250px;
+    padding: 50px;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+.click_ani:hover{
+    background-color: #ff7f50;
+}
+.click_ani:active{
+
+    background-color: #ff7f50;
+    box-shadow: 0 0 8px #666;
+    transform: translateY(3px);
+}
+

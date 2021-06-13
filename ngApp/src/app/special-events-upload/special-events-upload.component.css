@@ -1,0 +1,200 @@
+/* navbar common css*/
+
+.nava{
+    color: white;
+    margin-right: 20px;
+}
+.nava:hover{
+    color: grey;
+    text-decoration: none;
+    cursor:pointer;
+}
+.navbar{
+    height: 60px;
+    font-size: 20px;
+}
+.nb_main{
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,90);
+    position: fixed;top: 0;
+    z-index: 1;
+}
+.rigt{
+    padding-top: 12px;
+}
+.profile_small_icon{
+    height: 40px;
+    width: 40px;
+    background-image: url('../profile.jpg');
+    background-size: cover;
+    border-radius: 50px;
+    margin-top: 10px;
+    box-shadow: 0 0 3px rgba(0,0,0,40);
+    /*total navbar height is 60px*/
+
+}
+.profile_small_icon:hover{
+    cursor: pointer;
+    box-shadow: 0 0 6px rgba(0,0,0,70);
+}
+.bookportal{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
+
+.bookportal:hover{
+    color: grey;
+}
+/* upload body */
+
+*{
+   font-family: 'Poppins','Sans-serif';
+
+}
+
+.parent_upload{
+    width: 100%;
+    height: 810px;
+    background-image: url('./upload.jpg'); 
+    background-size: cover;
+    position: absolute;
+}
+.upload_body{
+    position: absolute;
+    left: 50%;
+    top: 57%;
+    transform: translate(-50%,-50%);
+    height: 650px;
+    width: 460px;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 10px;
+
+}
+.upload_form{
+    /*border: 2px solid black; */
+    height: 600px;
+    width: 420px;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%,-50%);
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.book_name,.author1,.author2,.edition,.subject,.category,.branch,.photo,.price
+{
+    padding: 13px;
+    border-bottom:2.3px solid grey;
+}
+.book_name:hover,.author1:hover,.author2:hover,.edition:hover,.subject:hover,.category:hover,.branch:hover,.photo:hover,.price:hover
+{
+    transform: scale(1.05);
+}
+.upload_form input
+{
+    padding-left: 7px;
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    width: 300px;
+
+}
+
+.label_form{
+    padding-left: 7px;
+    color: white;
+    font-size: 1.2rem;
+}
+.upload_form select
+{
+    margin-left: 7px;
+    background: none;
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 3px;
+    color: grey;
+    font-size: 1.1rem;
+    width: 170px;
+
+}
+input[type="file"] {
+    padding-left: 8px;
+}
+.validate_error{
+
+    padding-top: 6px;
+    padding-left: 8px;
+    font-size: 23px;
+}
+
+.color_red{
+    color: red;
+}
+.upload_form button
+{
+    background: none;
+    outline: none;
+    border: none;
+    background-color: white;
+    border-radius: 20px;
+    width: 100px;
+    height: 45px;
+    font-size: 17px;
+}
+.submit_button{
+    /*border: 1px solid black; */
+    margin-left: 160px;
+    margin-right: 160px;
+    margin-top: 22px;
+}
+.iconn
+{
+    width: 30px;
+    display: inline-block;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    font-size: 20px;
+    color: white;
+    border-right: 1px solid white;
+}
+
+.f_up{
+    font-size: 20px;
+    color: white;
+}
+
+.click_ani:hover{
+    transform: scale(1.04);
+    background-color: grey;
+}
+.click_ani:active{
+
+    background-color: darkgrey;
+    box-shadow: 0 0 8px #666;
+    transform: translateY(3px);
+}
+
+.alert_msgg{
+    text-align: center;
+    padding-top: 15px;
+    position: relative;
+    color: red;
+    font-size: medium;
+    font-weight: 300;
+}
+.success{
+    text-align: center;
+    padding-top: 15px;
+    position: relative;
+    color: green;
+    font-size: large;
+    font-weight: 300;
+}

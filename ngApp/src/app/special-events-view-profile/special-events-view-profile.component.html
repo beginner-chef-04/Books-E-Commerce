@@ -1,0 +1,87 @@
+<div class="nb_main">
+
+<nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
+  <div class="navbar-brand" class="nava" style="font-size: 30px;"><a class="bookportal" routerLink="/special" routerLinkActive="active">Books Portal</a></div>
+
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+      <ul class="navbar-nav">
+          <div class="navbar dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Hi, {{username_vp}} !!
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" routerLink="/special/view-profile" routerLinkActive="active" >View Profile</a>
+              <a class="dropdown-item" routerLink="/special/upload" routerLinkActive="active">Upload</a>
+              <div class="dropdown-item" style="cursor:pointer" >Current Balance: {{balance_vp}} </div>
+            </div>
+          </div>
+          <a class="nav-link nava rigt" *ngIf="!_authService.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
+          <a class="nav-link nava rigt" *ngIf="!_authService.loggedIn()" routerLink="/register" routerLinkActive="active">Register</a>
+          <a class="nav-link nava rigt" style="cursor:pointer" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">Logout</a>        
+      </ul>
+    </div>
+  </nav>  
+  
+</div>
+<!-- body       <div style="border: 2px solid black;font-size: x-small;height: 110px;width: 70px;"><img [src]="image_url" alt="No Preview" width="100%;" height="100%;"></div>
+ -->
+  <div class="parent_profile_ph"><div class="profile_ph"></div></div>
+  <div class="parent_info">
+    <ul class="info">
+      <li>Name : {{username_vp}}</li>
+      <li>Email : {{email_vp}}</li>
+      <li>Address : {{address_vp}}</li>
+      <li>Current Balance : {{balance_vp}}</li>
+      <li>Books On Sale : {{boos_on_sale_vp}}</li>
+      <li>Total Books Sold : {{books_sold_vp}}</li>
+      <li>Total Books Bought : {{books_bought_vp}}</li>
+    </ul>
+  </div>
+
+<div class="bottom_info">
+    <div class="results1">&nbsp;Books&nbsp;Uploaded&nbsp;(Still&nbsp;On&nbsp;Sale)</div>
+        <div class="noresultfound" *ngIf="!view1.length">No Books On Sale !!</div>
+        <div class="result" *ngFor="let event of view1;">
+      
+          <div class="otherinfo">
+            <h5 class="bookname">{{event.book_name}}</h5>
+            <p class="auth1">Author&nbsp;:&nbsp;{{event.author1}}</p>
+            <div class="auth2" *ngIf="event.author2!=''">Other Author&nbsp;:&nbsp;{{event.author2}}</div>
+            <p class="edition">Edition&nbsp;:&nbsp;{{event.edition}}</p> 
+            <p class="nameofuploader">Uploaded&nbsp;By&nbsp;:&nbsp;{{event.name}}</p> 
+            <p class="price">Rs.&nbsp;{{event.price}}</p>
+          </div>
+        </div>
+    <div class="results2">&nbsp;Books&nbsp;Sold</div>
+        <div class="noresultfound" *ngIf="!view2.length">No Books Sold Yet !!</div>
+        <div class="result" *ngFor="let event of view2">
+      
+          <div class="otherinfo">
+            <h5 class="bookname">{{event.book_name}}</h5>
+            <p class="auth1">Author&nbsp;:&nbsp;{{event.author1}}</p>
+            <div class="auth2" *ngIf="event.author2!=''">Other Author&nbsp;:&nbsp;{{event.author2}}</div>
+            <p class="edition">Edition&nbsp;:&nbsp;{{event.edition}}</p> 
+            <p class="nameofuploader">Uploaded&nbsp;By&nbsp;:&nbsp;{{event.name}}</p> 
+            <p class="price">Rs.&nbsp;{{event.price}}</p>
+          </div>
+        </div>
+    <div class="results3">&nbsp;Books&nbsp;Bought</div>
+        <div class="noresultfound" *ngIf="!view3.length">No Books Bought !!</div>
+        <div class="result" *ngFor="let event of view3">
+      
+          <div class="otherinfo">
+            <h5 class="bookname">{{event.book_name}}</h5>
+            <p class="auth1">Author&nbsp;:&nbsp;{{event.author1}}</p>
+            <div class="auth2" *ngIf="event.author2!=''">Other Author&nbsp;:&nbsp;{{event.author2}}</div>
+            <p class="edition">Edition&nbsp;:&nbsp;{{event.edition}}</p> 
+            <p class="nameofuploader">Uploaded&nbsp;By&nbsp;:&nbsp;{{event.name}}</p> 
+            <p class="price">Rs.&nbsp;{{event.price}}</p>
+          </div>
+        </div>
+</div>
+
+

@@ -1,0 +1,126 @@
+<div class="nb_main">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="navbar-brand" class="nava" style="font-size: 30px;"><a class="bookportal" routerLink="/special" routerLinkActive="active">Books Portal</a></div>
+
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+      <ul class="navbar-nav">
+          <div class="profile_small_icon"></div>
+          <div class="navbar dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Hi, {{username}} !!
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" routerLink="/special/view-profile" routerLinkActive="active" >View Profile</a>
+              <a class="dropdown-item" routerLink="/special/upload" routerLinkActive="active">Upload</a>
+              <div class="dropdown-item" style="cursor:pointer" >Current Balance: {{balance}} </div>
+            </div>
+          </div>
+          <a class="nav-link nava rigt" *ngIf="!_authService.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
+          <a class="nav-link nava rigt" *ngIf="!_authService.loggedIn()" routerLink="/register" routerLinkActive="active">Register</a>
+          <a class="nav-link nava rigt" style="cursor:pointer" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">Logout</a>        
+      </ul>
+    </div>
+  </nav>  
+
+</div>
+<!--
+<div *ngFor="let item of specialEvents">{{item._id}} {{item.name}}</div>
+-->
+
+<div class="parent_upload">
+  <div class="upload_body"></div>
+  <div class="upload_form">
+    <form #upload_details="ngForm" (ngSubmit)="onupload(upload_details.value)" novalidate>
+      <div class="book_name">
+        <div class="iconn"><fa name="fas fa-book" ></fa></div>
+        <input type="text" autocomplete="off" placeholder="Book Name" name="book_name" ngModel  #bname="ngModel" autofocus required>
+        <fa name="fas fa-exclamation-circle" class="validate_error color_red" *ngIf="bname.errors?.required && (bname.touched || bname.dirty)"></fa>      
+      </div>
+
+
+      <div class="author1">
+        <div class="iconn"><fa name="fas fa-user" ></fa></div>
+        <input type="text" autocomplete="off" placeholder="Author Name" name="author1" ngModel #auth1="ngModel" required >
+        <fa name="fas fa-exclamation-circle" class="validate_error color_red" *ngIf="auth1.errors?.required && (auth1.touched || auth1.dirty)"></fa>      
+      
+      </div>
+
+      <div class="author2">
+        <div class="iconn"><fa name="fas fa-user" ></fa></div>
+        <input type="text" autocomplete="off" placeholder="Author 2 Name (If Exists)" name="author2" ngModel #auth2="ngModel" >
+      </div>
+
+      <div class="edition">
+        <div class="iconn"><fa name="fas fa-book" ></fa></div>
+        <input type="text" pattern="^[0-9]{1,3}"  placeholder="Book Edition (In No. Only)" name="edition" ngModel  #edition="ngModel" required>
+        <fa name="fas fa-times" class="validate_error color_red" *ngIf="edition.errors?.pattern"></fa>
+        <fa name="fas fa-exclamation-circle" class="validate_error color_red" *ngIf="edition.errors?.required && (edition.touched || edition.dirty)"></fa>            
+      </div>
+
+      <div class="subject">
+        <div class="iconn"><fa name="fas fa-book" ></fa></div>
+        <label class="label_form">Select Subject</label>  
+        <select ngModel name="subject" #subj="ngModel" required>
+          <option>DBMS</option>
+          <option>WT</option>
+          <option>DSA</option>
+          <option>OS</option>
+        </select>  
+        <fa name="fas fa-exclamation-circle" class="validate_error color_red" *ngIf="subj.errors?.required && (subj.touched || subj.dirty)"></fa>            
+      </div>
+
+    <!--  <div class="category">
+        <div class="iconn"><fa name="fas fa-book" ></fa></div>
+        <label class="label_form">Select Category</label> 
+        <select ngModel name="category" #catgr="ngModel" required>
+          <option>TextBook</option>
+          <option>Competetive Exam</option>
+        </select>        
+        <fa name="fas fa-exclamation-circle" class="validate_error color_red" *ngIf="catgr.errors?.required && (catgr.touched || catgr.dirty)"></fa>            
+      </div>-->      
+
+      <div class="branch">
+        <div class="iconn"><fa name="fas fa-book" ></fa></div>
+        <label class="label_form">Select Branch</label> 
+        <select ngModel name="branch" #brch="ngModel"  required>
+          <option>CSE</option>
+          <option>IT</option>
+          <option>ME</option>
+          <option>EE</option>
+        </select>
+        <fa name="fas fa-exclamation-circle" class="validate_error color_red" *ngIf="brch.errors?.required && (brch.touched || brch.dirty)"></fa>            
+      </div>
+
+      <div class="price">
+        <div class="iconn"><fa name="fas fa-book" ></fa></div>
+        <input type="text" pattern="^[0-9]{1,5}"  placeholder="Enter Price (In No. Only)" name="price" ngModel  #prc="ngModel" required>
+        <fa name="fas fa-times" class="validate_error color_red" *ngIf="prc.errors?.pattern"></fa>
+        <fa name="fas fa-exclamation-circle" class="validate_error color_red" *ngIf="prc.errors?.required && (prc.touched || prc.dirty)"></fa>            
+      </div>
+
+      <div class="photo">
+        <div class="iconn"><fa name="fas fa-file" ></fa></div>
+        <input type="file" #nameref (change)="myfile($event)" ngModel name="file" #a accept=".jpg,.png" #filimg="ngModel" required> 
+        <fa name="fas fa-exclamation-circle" class="validate_error color_red" *ngIf="filimg.errors?.required && (filimg.touched || filimg.dirty)"></fa>                  
+      </div>
+
+      <div class="alert_msgg">
+        <span *ngIf="invalid_img!=null" >{{invalid_img}}</span>
+      </div>          
+
+      <div class="submit_button">
+      <button [disabled]="!upload_details.form.valid" (click)="clicked($event)" type="submit" class="click_ani" id="register"  >Upload</button>        
+      </div>
+
+      <div class="success">
+        <span *ngIf="upload_suceess!=null" >{{upload_suceess}}</span>
+      </div>    
+    </form> 
+  </div>
+    
+</div>

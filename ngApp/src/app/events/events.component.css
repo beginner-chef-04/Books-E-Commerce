@@ -1,0 +1,225 @@
+/*for testing*/
+/*div,p,h5{
+    border: 2px solid black;
+}*/ 
+
+
+*{
+    font-family: 'Poppins','Sans-serif';
+ 
+}
+.nb_main{
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,90);
+    position: fixed;top: 0;
+    z-index: 1;
+}
+.nava{
+    color: white;
+    margin-right: 20px;
+}
+.nava:hover{
+    color: grey;
+    text-decoration: none;
+    cursor:pointer;
+}
+.navbar{
+    height: 60px;
+    font-size: 20px;
+}
+.rigt{
+    padding-bottom: 2px;
+}
+
+/*search css*/
+
+.search_bar{
+    width: 60%;
+    box-sizing: border-box;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 350px;
+    margin-top: 60px;
+    padding-top: 100px;
+    text-align: center;
+}
+.click_ani:hover{
+    transform: scale(1.04);
+    background-color: grey;
+}
+.click_ani:active{
+
+    background-color: darkgrey;
+    box-shadow: 0 0 8px #666;
+    transform: translateY(1px);
+}
+.searchoption{
+    color: black;
+    font-size: x-large;
+    font-weight: 600;
+}
+.parallel{
+    display: block;
+    border: 1px sold black;
+    float: left;
+    margin-left: 90px;
+    text-align: left;
+}
+.blockview{
+    display: block;
+    border: 1px sold black;
+    text-align: left;
+    margin-top: 10px;
+}
+.searchbutton{
+    background: none;
+    outline: none;
+    border: none;
+    background-color: grey;
+    border-radius: 20px;
+    width: 130px;
+    height: 45px;
+    font-size: 17px;
+}
+input{
+    margin-right: 5px;
+    height: 15px;
+    width: 15px;
+    background-color: lightblue;
+    color: rgb(6, 232, 248);
+    border-radius: 50%;
+    border: 2px solid lightblue;
+}
+/*results css*/
+
+.results{
+    width: 80%;
+    box-sizing: border-box;
+    margin-left: 9%;
+    /*margin-right: 10%;*/
+    margin-top: 28px;
+}
+.noresultfound{
+    color: red;
+    width: 100%;
+    font-size: larger;
+    font-weight: 600;
+    text-align: center;
+    padding-right: 50px;
+}
+
+.result{
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 2px solid  black;
+    padding: 10px;
+    overflow: auto;
+    margin-bottom: 28px;
+}
+.result:hover{
+    transform: scale(1.02);
+}
+.imagenprice{
+    width: 11.8%;
+    display: block;
+    box-sizing: border-box;
+    float: left;
+    clear: left;
+}
+.image_holder{
+    box-shadow: 0 0 10px rgba(0,0,0,90);
+    font-size: x-small;
+    height: 150px;
+    width: 120px;
+    border-radius: 3px;
+}
+.price{
+    margin-top: 9px;
+    margin-bottom: 16px;
+    color: green;
+    text-align: center;
+    font-size: medium;
+
+}
+.bookname{
+    margin-top: 5px;
+    margin-bottom: 25px;
+    color: black;
+    font-size: x-large;
+    font-weight: bold;
+
+}
+.auth1{
+    margin-top: 0px;
+    margin-bottom: 6px;
+    color: grey;
+    font-size: medium;
+
+}
+.auth2{
+    margin-top: 0px;
+    margin-bottom: 6px;
+    color: grey;
+    font-size: medium;
+
+}
+.edition{
+    margin-top: 0px;
+    margin-bottom: 6px;
+    color: grey;
+    font-size: medium;
+
+}
+.nameofuploader{
+    margin-top: 0px;
+    margin-bottom: 6px;
+    color: grey;
+    font-size: medium;
+}
+.otherinfo{
+    width: 60%;
+    display: block;
+    margin-left: 4%;
+    box-sizing: border-box;
+    float: left;
+}
+.buybutton_body{
+    display: block;
+    box-sizing: border-box;
+    width: 12%;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.buybutton{
+    background: none;
+    outline: none;
+    border: none;
+    background-color: green;
+    border-radius: 3px;
+    width: 73px;
+    height: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 0px;
+}
+.buybutton:hover{
+    transform: scale(1.04);
+    background-color: rgb(21, 241, 21);
+    cursor: pointer;
+}
+.buybutton:active{
+    
+    background-color: rgb(21, 241, 21);
+    box-shadow: 0 0 8px #666;
+    transform: translateY(1px);
+}
+.tologin{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    padding-top: 4px;
+}

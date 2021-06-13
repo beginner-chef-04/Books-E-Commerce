@@ -1,0 +1,40 @@
+<div class="header">Log<span> In</span></div>
+<div class="footer">Haven't Registered Yet?<a class="nav-link" routerLink="/register" routerLinkActive="active"> Sign Up</a></div>
+
+<div class="containerr">   </div>
+<div class="form_body">
+      <form  name="form1"  id="form">
+
+        <div class="user">
+        <div class="icon"><fa class="ico" name="fas fa-user"></fa></div>
+        <input type="text" name="username" [(ngModel)]="loginUserData.username" placeholder="Username" id="u" autocomplete="off" required>
+        </div>
+
+        <div class="pass">
+        <div class="icon"><fa class="ico" name="fas fa-lock"></fa></div>
+        <input type="password" [(ngModel)]="loginUserData.password" placeholder="Password" id="p" autocomplete="off" name="password" required>
+        </div>
+                   
+        <div class="alert" [ngClass]="{'msgg': invalid_uname!=null}" >
+          <span *ngIf="invalid_uname!=null" >{{invalid_uname}}</span>
+        </div>
+
+        <div class="alert" [ngClass]="{'msgg': invalid_pwd!=null}" >
+          <span *ngIf="invalid_pwd!=null" >{{invalid_pwd}}</span>
+        </div>        
+
+        <div class="sbt">
+        <button type="button" (click)="loginUser()" class="click_ani"  id="login" >Login</button>
+        </div>
+    </form>
+</div>
+
+           
+           
+              
+           
+       <!--    <input type="text" class="form-control rounded-0" [(ngModel)]="loginUserData.email" name="email" required>
+
+              <input type="password" class="form-control rounded-0" [(ngModel)]="loginUserData.password" name="password" required>
+            <button type="button" (click)="loginUser()" class="btn btn-success float-right">Login</button>
+       -->
